@@ -44,15 +44,15 @@ public class MediaTemplate extends AbstractInstagramOperations implements MediaO
 	}
 
 	public List<Comment> getComments(long mediaId) {
-		return get(buildUri(MEDIA_ENDPOINT + Long.toString(mediaId) + "/comments/"), CommentList.class).getList();
+		return get(buildUri(MEDIA_ENDPOINT + mediaId + "/comments/"), CommentList.class).getList();
 	}
 
 	public List<InstagramProfile> getLikes(long mediaId) {
-		return get(buildUri(MEDIA_ENDPOINT + Long.toString(mediaId) + "/likes/"), InstagramProfileList.class).getList();
+		return get(buildUri(MEDIA_ENDPOINT + mediaId + "/likes/"), InstagramProfileList.class).getList();
 	}
 
 	public Media getMedia(long mediaId) {
-		return get(buildUri(MEDIA_ENDPOINT + Long.toString(mediaId)+ "/"), MediaContainer.class).getObject();
+		return get(buildUri(MEDIA_ENDPOINT + mediaId + "/"), MediaContainer.class).getObject();
 	}
 
 	public List<Media> getPopular() {
